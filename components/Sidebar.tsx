@@ -11,7 +11,7 @@ const Sidebar = () => {
 
     return (
         <section className="sticky left-0 top-0 h-screen w-fit flex-column 
-        justify-content-between p-6 pt-8 max-sm:hidden lg:w-[264px] text-color-700">
+        justify-content-between p-6 pt-1 hidden md:flex lg:w-[264px] text-color-700">
             <div className="flex flex-1 flex-column gap-1">
                 {links.map((item) => {
                     const isActive = pathname === item.route || pathname.startsWith(`${item.route}/`);
@@ -20,7 +20,7 @@ const Sidebar = () => {
                         <Link
                             href={item.route}
                             key={item.label}
-                            className={`flex gap-3 align-items-center p-4 rounded-lg justify-content-start 
+                            className={`flex gap-3 align-items-center py-3 rounded-lg justify-content-start 
                             no-underline ${isActive ? 'text-primary' : 'text-color'}`}
                         >
                             <i className={item.icon}></i>

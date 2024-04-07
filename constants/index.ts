@@ -7,12 +7,12 @@ export const links = [
 
     {
         icon: 'pi pi-calendar-clock',
-        route: '/upcoming',
+        route: '/upcoming-meetings',
         label: 'Upcoming',
     },
     {
         icon: 'pi pi-calendar',
-        route: '/previous',
+        route: '/previous-meetings',
         label: 'Previous',
     },
     {

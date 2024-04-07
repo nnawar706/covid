@@ -1,10 +1,10 @@
-import Image from "next/image"
 
-import { Button } from 'primereact/button';
 
 const Home = () => {
     return (
-        <Button label="Submit" />
+        <section className="flex w-full h-full flex-column gap-4 text-color">
+            <div className="h-[303px] w-full rounded-[20px] bg-cover"></div>
+        </section>
     );
 }
 

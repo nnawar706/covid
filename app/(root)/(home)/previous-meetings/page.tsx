@@ -1,6 +1,6 @@
 import React from 'react'
 
-const MobileNav = () => {
+const Previous = () => {
     return (
         <div>
         
@@ -8,4 +8,4 @@ const MobileNav = () => {
     )
 }
 
-export default MobileNav
+export default Previous

@@ -1,6 +1,6 @@
 import React from 'react'
 
-const MobileNav = () => {
+const PersonalRoom = () => {
     return (
         <div>
         
@@ -8,4 +8,4 @@ const MobileNav = () => {
     )
 }
 
-export default MobileNav
+export default PersonalRoom
