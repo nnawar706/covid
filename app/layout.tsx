@@ -16,7 +16,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
         <title>COVID</title>
       </head>
         <PrimeReactProvider>
-          {/* <ClerkProvider
+          <ClerkProvider
             appearance={{ 
               layout: {
                 socialButtonsVariant: "iconButton",
@@ -30,11 +30,11 @@ export default function RootLayout({ children }: RootLayoutProps) {
                 colorInputText: "#15151c"
               }
             }}
-          > */}
+          >
             <body>
               {children}
             </body>
-          {/* </ClerkProvider> */}
+          </ClerkProvider>
         </PrimeReactProvider>
     </html>
   )

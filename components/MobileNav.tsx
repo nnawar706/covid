@@ -10,7 +10,7 @@ import Link from 'next/link';
 
 const MobileNav = () => {
     const pathname = usePathname();
-    const [visible, setVisible] = useState<boolean>(true);
+    const [visible, setVisible] = useState<boolean>(false);
 
     return (
         <section className="w-full max-w-[264px] flex align-items-center">
