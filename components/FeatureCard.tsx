@@ -7,11 +7,10 @@ import { CardProps } from '@/types';
 const FeatureCard = ({ className, icon, title, description, handleClick }: CardProps) => {
     return (
         <section className="col-12 md:col-6 xl:col-3">
-            <div className={`px-4 py-6 flex flex-column justify-content-between 
-                w-full border-round cursor-pointer ${className}`}
+            <div className={`p-4 w-full border-round cursor-pointer ${className}`}
                 onClick={handleClick}
             >
-                <div className="flex align-items-center border-rounded pb-2">
+                <div className="border-rounded pb-5">
                     <i className={`bg-cyan-600 p-2 border-round text-100 font-bold ${icon}`}></i>
                 </div>
 

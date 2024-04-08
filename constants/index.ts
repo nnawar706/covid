@@ -34,3 +34,9 @@ export const avatarImages = [
     '/images/avatar-4.png',
     '/images/avatar-5.png',
 ];
+
+export const initialValues = {
+    dateTime: new Date(),
+    description: '',
+    link: '',
+}
