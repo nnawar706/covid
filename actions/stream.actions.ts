@@ -9,7 +9,7 @@ const apiSecret = process.env.STREAM_SECRET_KEY;
 export const tokenProvider = async () => {
     const user = await currentUser();
 
-    if (!user) throw new Error('No authorised user found.');
+    if (!user) throw new Error('No authorized user found.');
     if (!apiKey || !apiSecret) throw new Error('Stream authentication failed.');
 
     const client = new StreamClient(apiKey, apiSecret);

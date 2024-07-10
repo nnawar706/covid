@@ -8,7 +8,7 @@ const Home = () => {
 
     return (
         <section className="flex w-full h-full flex-column gap-4 text-color">
-            <div className="h-24rem w-full border-round bg-cover"
+            <div className="h-24rem w-full border-round bg-cover p-4"
                 style={{ backgroundImage: "url('/images/hero-background.png')" }}
             >
                 <div className="flex flex-column h-full justify-content-between 
