@@ -40,3 +40,5 @@ export const initialValues = {
     description: '',
     link: '',
 }
+
+export const callLayoutOptions = ['grid','speaker-left','speaker-right']

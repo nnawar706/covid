@@ -1,0 +1,16 @@
+.str-video.light {
+  --str-video__primary-color: #1ebbd7;
+  --str-video__secondary-color: #0c93b1;
+  
+  /* base colors */
+  --str-video__base-color1: #e3e4e5;
+  --str-video__base-color7: #e3e4e5;
+
+  /* buttons */
+  --str-video__button-primary-base: #c0c0c0;
+  --str-video__button-default-hover: #5dc9e1;
+
+  /* backgrounds */
+  --str-video__background-color1: #808589;
+  --str-video__background-color4: #808589;
+}

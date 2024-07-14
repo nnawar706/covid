@@ -4,6 +4,9 @@ import 'primereact/resources/primereact.css';
 import 'primeflex/primeflex.css';
 import 'primeicons/primeicons.css';
 import "primereact/resources/themes/lara-light-cyan/theme.css";
+import '@stream-io/video-react-sdk/dist/css/styles.css'
+
+import './globals.css'
 
 interface RootLayoutProps {
   children: React.ReactNode

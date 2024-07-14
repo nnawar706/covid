@@ -21,3 +21,7 @@ export interface MeetingModalProps {
     image?: string;
     buttonIcon?: string;
 }
+
+export interface MeetingSetupProps {
+    setIsSetupComplete: (value: boolean) => void
+}

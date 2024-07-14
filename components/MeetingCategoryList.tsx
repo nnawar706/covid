@@ -7,7 +7,7 @@ import { useUser } from '@clerk/nextjs';
 import FeatureCard from './FeatureCard';
 import { initialValues } from '@/constants';
 import MeetingModal from './MeetingModal';
-import { useStreamVideoClient } from '@stream-io/video-react-sdk';
+import { Call, useStreamVideoClient } from '@stream-io/video-react-sdk';
 import { Toast } from 'primereact/toast';
 import { callToast } from '@/utils';
 
@@ -17,6 +17,7 @@ const MeetingCategoryList = () => {
     const { user } = useUser();
     const client = useStreamVideoClient();
     const [value, setValue] = useState(initialValues);
+    const [callDetail, setCallDetail] = useState<Call>()
     const [meetingState, setMeetingState] = useState<
         'isScheduleMeeting' | 'isJoiningMeeting' | 'isInstantMeeting' | undefined
     >(undefined);
@@ -45,6 +46,12 @@ const MeetingCategoryList = () => {
                     }
                 }
             })
+
+            setCallDetail(call)
+
+            callToast(toast, 'success', 'New meeting created.')
+
+            push(`/meeting/${call.id}`)
         } catch (error) {
             callToast(toast, 'error', 'Something went wrong.')
             console.log(error)
