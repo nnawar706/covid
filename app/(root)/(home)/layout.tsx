@@ -5,9 +5,12 @@ import Navbar from "@/components/Navbar";
 import Sidebar from "@/components/Sidebar";
 
 export const metadata: Metadata = {
-    title: "COVID",
-    description: "Collaborative video communication at its best!"
-};
+    title: 'COVID',
+    description: 'Enjoy the collaborative video performance with COVID!',
+    icons: {
+      icon: '/icons/logo.svg'
+    }
+}
 
 const RootLayout = ({ children }: Readonly<{children: ReactNode}>) => (
     <main className="relative">

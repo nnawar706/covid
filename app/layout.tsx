@@ -7,17 +7,26 @@ import "primereact/resources/themes/lara-light-cyan/theme.css";
 import '@stream-io/video-react-sdk/dist/css/styles.css'
 
 import './globals.css'
+import { Metadata } from "next";
 
 interface RootLayoutProps {
   children: React.ReactNode
 }
 
+export const metadata: Metadata = {
+  title: 'COVID',
+  description: 'Enjoy the collaborative video performance with COVID!',
+  icons: {
+    icon: '/icons/logo.svg'
+  }
+}
+
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <head>
+      {/* <head>
         <title>COVID</title>
-      </head>
+      </head> */}
         <PrimeReactProvider>
           <ClerkProvider
             appearance={{ 
