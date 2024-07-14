@@ -4,7 +4,7 @@ import { MeetingModalProps } from "@/types";
 import { Button } from 'primereact/button';
 
 const MeetingModal = ({ isOpen, onClose, title, className, children, 
-        handleClick, buttonText, isInstant, image, buttonClassName, buttonIcon
+        handleClick, buttonText, isInstant, image, buttonIcon
     }: MeetingModalProps) => {
     return (
         <Dialog visible={isOpen} onHide={onClose}>
@@ -12,7 +12,7 @@ const MeetingModal = ({ isOpen, onClose, title, className, children,
                 <div className="flex flex-column gap-5">
                     <h1 className={`text-3xl font-bold m-0 ${className}`}>{title}</h1>
                     {children}
-                    <Button onClick={handleClick} label={buttonText}></Button>
+                    <Button icon={buttonIcon} onClick={handleClick} label={buttonText}></Button>
                 </div>
             </div>
         </Dialog>

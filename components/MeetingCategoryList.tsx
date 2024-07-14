@@ -3,6 +3,8 @@
 import { useRef, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { useUser } from '@clerk/nextjs';
+import { FloatLabel } from "primereact/floatlabel";
+import { InputTextarea } from 'primereact/inputtextarea';
 
 import FeatureCard from './FeatureCard';
 import { initialValues } from '@/constants';
@@ -10,6 +12,7 @@ import MeetingModal from './MeetingModal';
 import { Call, useStreamVideoClient } from '@stream-io/video-react-sdk';
 import { Toast } from 'primereact/toast';
 import { callToast } from '@/utils';
+import { Calendar } from 'primereact/calendar';
 
 const MeetingCategoryList = () => {
     const { push } = useRouter();
@@ -51,12 +54,18 @@ const MeetingCategoryList = () => {
 
             callToast(toast, 'success', 'New meeting created.')
 
-            push(`/meeting/${call.id}`)
+            if (value.description === '') {
+                push(`/meeting/${call.id}`)
+            }
         } catch (error) {
             callToast(toast, 'error', 'Something went wrong.')
             console.log(error)
+        } finally {
+            setValue(initialValues)
         }
     }
+
+    const meetingLink = `${process.env.NEXT_PUBLIC_BASE_URL}/meeting/${callDetail?.id}`
     
     return (
         <section className="grid">
@@ -89,6 +98,43 @@ const MeetingCategoryList = () => {
                 className="bg-yellow-400"
                 handleClick={() => push('/recordings')}
             />
+
+            {callDetail ? (
+                <MeetingModal
+                    isOpen={meetingState === 'isScheduleMeeting'}
+                    onClose={() => setMeetingState(undefined)}
+                    title='Meeting Created'
+                    handleClick={() => {
+                        navigator.clipboard.writeText(meetingLink)
+                        
+                        callToast(toast, 'success', 'Meeting link copied.')
+                    }}
+                    className='text-center'
+                    buttonIcon='pi pi-clone'
+                    buttonText='Copy Meeting Link'
+                />
+            ) : (
+                <MeetingModal
+                    isOpen={meetingState === 'isScheduleMeeting'}
+                    onClose={() => setMeetingState(undefined)}
+                    title='Schedule Meeting'
+                    handleClick={createMeeting}
+                    buttonText='Create Meeting'
+                >
+                    <div className="flex flex-column gap-2">
+                        <label className="text-xs">Description</label>
+                        <InputTextarea id='description' autoResize rows={5} cols={30} 
+                        value={value.description}
+                        onChange={(e) => {
+                            setValue({ ...value, description: e.target.value })
+                        }}/>
+                    </div>
+                    <div className="flex flex-column gap-2">
+                        <label className="text-xs">Date & Time</label>
+                        <Calendar value={value.dateTime} showIcon showTime hourFormat='24'/>
+                    </div>
+                </MeetingModal>
+            )}
 
             <MeetingModal
                 isOpen={meetingState === 'isInstantMeeting'}
