@@ -103,7 +103,7 @@ const MeetingCategoryList = () => {
                 <MeetingModal
                     isOpen={meetingState === 'isScheduleMeeting'}
                     onClose={() => setMeetingState(undefined)}
-                    title='Meeting Created'
+                    title='Meeting Scheduled'
                     handleClick={() => {
                         navigator.clipboard.writeText(meetingLink)
                         
@@ -131,7 +131,10 @@ const MeetingCategoryList = () => {
                     </div>
                     <div className="flex flex-column gap-2">
                         <label className="text-xs">Date & Time</label>
-                        <Calendar value={value.dateTime} showIcon showTime hourFormat='24'/>
+                        <Calendar value={value.dateTime} showIcon showTime hourFormat='24'
+                        onChange={(e) => {
+                            setValue({ ...value, dateTime: e.value as Date })
+                        }}/>
                     </div>
                 </MeetingModal>
             )}
