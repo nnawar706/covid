@@ -25,3 +25,24 @@ export interface MeetingModalProps {
 export interface MeetingSetupProps {
     setIsSetupComplete: (value: boolean) => void
 }
+
+export interface MeetingListProps {
+    type: 'Upcoming' | 'Recording' | 'Previous'
+}
+
+export interface PageHeadingProps {
+    title: string;
+    subtitle?: string;
+    back: boolean
+}
+
+export interface MeetingCardProps {
+    icon: string;
+    title: string;
+    date: Date;
+    isPrevious: boolean;
+    link: string;
+    buttonIcon?: string;
+    buttonText?: string;
+    handleClick: () => void;
+}
